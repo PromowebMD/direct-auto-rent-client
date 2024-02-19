@@ -24,8 +24,8 @@ export const useCheckCalendarDataIsValid = (): boolean => {
 
   const pickUpParsedDate = parse(pickUpDate, DATE_FORMAT, new Date());
   const returnParsedDate = parse(returnDate, DATE_FORMAT, new Date());
-  const pickUpParsedTime = parse(pickUpTime, TIME_FORMAT, new Date());
-  const returnParsedTime = parse(returnTime, TIME_FORMAT, new Date());
+  const pickUpParsedTime = parse(pickUpTime, TIME_FORMAT, pickUpParsedDate);
+  const returnParsedTime = parse(returnTime, TIME_FORMAT, returnParsedDate);
 
   return !(
     isBefore(returnParsedDate, pickUpParsedDate) ||
