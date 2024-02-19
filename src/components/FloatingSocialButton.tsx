@@ -17,7 +17,7 @@ export const FloatingSocialButton: React.FC = () => {
   return (
     <div ref={menuRef} className="fixed right-4 bottom-4 z-50">
       <button
-        className="rounded-full p-3 text-white shadow-md transition ease-in-out duration-400 bg-primary hover:bg-blue-700"
+        className="rounded-full p-3 text-white shadow-md transition ease-in-out duration-400 bg-accent hover:bg-green-600"
         onClick={toggleMenu}
       >
         <MessageCircle className="transition ease-in-out duration-400 hover:scale-125" />

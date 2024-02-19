@@ -37,6 +37,8 @@ export const StreetSelector: React.FC<StreetSelectorProps> = ({
           height: "100%",
           paddingLeft: "0.5rem",
           paddingRight: "0.5rem",
+          paddingTop: "0.5rem",
+          paddingBottom: "0.5rem"
         }),
         indicatorsContainer: () => ({
           display: "none",

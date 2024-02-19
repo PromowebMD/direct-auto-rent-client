@@ -19,7 +19,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <div
-      className={`flex flex-col w-full px-4 lg:px-0 h-fit items-center justify-center bg-primary ${className}`}
+      className={`flex flex-col w-full py-2 px-4 lg:px-0 lg:py-0 h-fit items-center justify-center bg-primary ${className}`}
     >
       <div className="flex w-full justify-between md:gap-44 lg:justify-evenly">
         <Link to="/">
