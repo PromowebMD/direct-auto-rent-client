@@ -1,13 +1,18 @@
 import React from "react";
-import { COPY_RIGHTS, FOOTER_INFO_TEXT } from "../utils/appText.ts";
+import {
+  COPY_RIGHTS,
+  FOOTER_INFO_TEXT_1,
+  FOOTER_INFO_TEXT_2,
+} from "../utils/appText.ts";
 
 export const FooterInfo: React.FC = () => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center">
       <div className="flex flex-col gap-4 lg:flex-row">
         <div className="flex flex-col lg:w-1/3">
-          <h2 className="mb-4 text-lg font-medium">Rentalcars.com</h2>
-          <p>{FOOTER_INFO_TEXT}</p>
+          <h2 className="mb-4 text-lg font-medium">direct-auto-rent.com</h2>
+          <p>{FOOTER_INFO_TEXT_1}</p>
+          <p className="mt-2">{FOOTER_INFO_TEXT_2}</p>
           <h3 className="my-6 text-sm font-normal">CONTACTEAZĂ-NE:</h3>
           <p className="text-base">reservations@directautorent.md</p>
         </div>

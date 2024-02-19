@@ -5,8 +5,10 @@ export const CALENDAR_CANCEL_RESERVATION =
   "Anulare Gratuită La Majoritatea Rezervărilor";
 export const USER_AGE_CONFIRMATION = "Vârsta Șoferului Între 30-65?";
 
-export const FOOTER_INFO_TEXT =
-  "Este denumirea comercială a Booking.com Transport Limited care este o companie înregistrată în Anglia și Țara Galilor (Numărul: 05179829) a cărei adresă înregistrata este 6 Goods Yard Street, Manchester, M3 3BG, Regatul Unit. Număr TVA: GB 855349007.";
+export const FOOTER_INFO_TEXT_1 =
+  "Bine ați venit la DirectAutoRent - destinația dumneavoastră de încredere pentru experiențe de închiriere auto fără probleme și fără bătăi de cap!";
+export const FOOTER_INFO_TEXT_2 =
+  "La DirectAutoRent, ne străduim să vă oferim cea mai bună selecție de mașini de închiriat, împreună cu servicii de înaltă calitate, astfel încât să vă puteți concentra pe călătoria dumneavoastră și să vă bucurați de fiecare moment.";
 export const COPY_RIGHTS = `Copyright © ${format(new Date(), "yyyy")} Direct Auto Rent. Creat de`;
 
 export const SERVICE_RENT_TEXT =

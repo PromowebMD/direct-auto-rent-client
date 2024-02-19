@@ -10,15 +10,21 @@ import { ContactBar } from "../components/ContactBar.tsx";
 export const Layout: React.FC = () => {
   const location = useLocation();
   return (
-    <main className="grid h-full">
+    <main className="flex h-full flex-1 flex-col justify-between">
       <Toaster />
-      <div className="bg-primary"><ContactBar/>
-        {location.pathname !== "/" && <Navbar/>}</div>
-      <div className="grid h-full">
+      <div className="h-fit bg-primary">
+        <ContactBar />
+        {location.pathname !== "/" && <Navbar />}
+      </div>
+      <div className="flex h-full flex-1 flex-col">
         <Outlet />
       </div>
       <FloatingSocialButton />
-      {location.pathname !== "/" && <div className="h-20"><FooterNav/></div>}
+      {location.pathname !== "/" && (
+        <div className="h-20">
+          <FooterNav />
+        </div>
+      )}
       <div className="mt-6 flex h-full flex-col place-self-center w-[80%]">
         <FooterInfo />
       </div>

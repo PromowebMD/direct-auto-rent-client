@@ -40,7 +40,7 @@ export const HomeScreen: React.FC = () => {
           <div className="mt-4 flex w-full justify-center self-center max-w-[1000px]">
             <CalendarCard />
           </div>
-          <div className="flex w-full flex-col justify-start gap-2 text-white lg:w-4/5">
+          <div className="flex w-full flex-col justify-start gap-2 text-white max-w-[1000px]">
             <div className="flex items-center gap-2">
               <input type="checkbox" className="h-5 w-5 rounded" />
               {USER_AGE_CONFIRMATION}
