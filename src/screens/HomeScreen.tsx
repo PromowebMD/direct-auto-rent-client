@@ -33,7 +33,7 @@ export const HomeScreen: React.FC = () => {
     <section className="grid h-full">
       <div className="flex h-full flex-col">
         <HeroSection>
-          <Navbar className="bg-transparent" />
+          <Navbar className="bg-transparent lg:pt-2" />
           <div className="mt-10 flex w-4/5 justify-start text-2xl font-bold text-white font-noToSans text-wrap md:justify-center lg:mt-20 lg:text-2xl">
             <p>{HERO_TEXT}</p>
           </div>

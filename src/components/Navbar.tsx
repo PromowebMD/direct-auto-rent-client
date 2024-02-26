@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
     >
       <div className="flex w-full justify-between md:gap-44 lg:justify-evenly">
         <Link to="/">
-          <img src={logo} alt="logo" className="max-w-32 lg:max-w-[320px]" />
+          <img src={logo} alt="logo" className="max-w-32 lg:max-w-[320px] lg:max-h-[35px]" />
         </Link>
         <button
           className="lg:hidden"
