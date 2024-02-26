@@ -70,7 +70,7 @@ export const HomeScreen: React.FC = () => {
             </>
           )}
         </div>
-        <div className="mt-4 flex w-4/5 justify-center self-center">
+        <div className="mt-4 flex pl-4 justify-center self-center lg:w-4/5 lg:pl-0">
           <OfferCard />
         </div>
         <hr className="mt-10 w-full bg-smoky lg:flex" />

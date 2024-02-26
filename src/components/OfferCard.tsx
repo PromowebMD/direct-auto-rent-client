@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import cartImg from "../assets/cart.svg";
+import cartMobile from "../assets/cart_mobile.svg";
 import { z } from "zod";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -39,12 +40,12 @@ export const OfferCard: React.FC = () => {
       </span>
       <div>
         <div className="flex items-center">
-          <h2 className="w-5/6 self-end font-bold font-noToSans text-[16px] lg:w-full lg:text-lg">
+          <h2 className="w-5/6 self-end font-bold font-noToSans text-2xl lg:w-full lg:text-lg">
             ÎNSCRIEȚI-VĂ PENTRU A PRIMI{" "}
             <span className="text-salleGreen">OFERTE</span> EXCLUSIVE!
           </h2>
-          <span className="flex w-1/3 md:hidden">
-            <img src={cartImg} alt="" />
+          <span className="h-28 w-28 overflow-hidden md:hidden">
+            <img src={cartMobile} alt="" className="object-fill" />
           </span>
         </div>
         <form
@@ -58,13 +59,13 @@ export const OfferCard: React.FC = () => {
           )}
           <input
             type="text"
-            className="w-full rounded border-2 px-1 border-secondary py-0.5"
+            className="w-full rounded border-2 px-1 border-secondary py-1.5"
             placeholder="Adresa de e-mail..."
             {...register("email")}
           />
           <button
             type="submit"
-            className="w-full rounded px-2 py-1 font-bold text-white bg-secondary max-w-[128px]"
+            className="mr-4 w-full rounded p-2 font-bold text-white bg-secondary max-w-[128px] lg:mr-0"
           >
             {isLoading ? <LoaderComponent /> : "ÎNREGISTRARE"}
           </button>
