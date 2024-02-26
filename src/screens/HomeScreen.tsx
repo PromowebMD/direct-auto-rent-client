@@ -6,7 +6,6 @@ import { CalendarCard } from "../components/CalendarCard.tsx";
 import { Carousel } from "../components/Carousel.tsx";
 import { OfferCard } from "../components/OfferCard.tsx";
 import { Link } from "react-router-dom";
-import { FooterNav } from "../components/FooterNav.tsx";
 import { ICar } from "../models/car.ts";
 import { getCars } from "../api/carsRequest.ts";
 import { LoaderComponent } from "../components/LoaderComponent.tsx";
@@ -70,9 +69,6 @@ export const HomeScreen: React.FC = () => {
               </Link>
             </>
           )}
-        </div>
-        <div className="mt-6 h-1 lg:hidden">
-          <FooterNav />
         </div>
         <div className="mt-4 flex w-4/5 justify-center self-center">
           <OfferCard />
