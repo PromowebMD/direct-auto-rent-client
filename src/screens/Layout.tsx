@@ -26,7 +26,7 @@ export const Layout: React.FC = () => {
         </div>
       )}
       <div className="mt-6 flex h-full flex-col place-self-center w-[80%]">
-        <FooterInfo />
+        {location.pathname !== "/" && <FooterInfo />}
       </div>
     </main>
   );

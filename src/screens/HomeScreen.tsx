@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { HeroSection } from "../components/HeroSection.tsx";
 import { Navbar } from "../components/Navbar.tsx";
-import { HERO_TEXT, USER_AGE_CONFIRMATION } from "../utils/appText.ts";
+import {
+  FOOTER_INFO_TEXT_1,
+  FOOTER_INFO_TEXT_2,
+  HERO_TEXT,
+  USER_AGE_CONFIRMATION,
+} from "../utils/appText.ts";
 import { CalendarCard } from "../components/CalendarCard.tsx";
 import { Carousel } from "../components/Carousel.tsx";
 import { OfferCard } from "../components/OfferCard.tsx";
@@ -10,6 +15,7 @@ import { ICar } from "../models/car.ts";
 import { getCars } from "../api/carsRequest.ts";
 import { LoaderComponent } from "../components/LoaderComponent.tsx";
 import { Check } from "react-feather";
+import { HomeFooterInfo } from "../components/HomeFooterInfo.tsx";
 
 export const HomeScreen: React.FC = () => {
   const [cars, setCars] = useState<ICar[]>([]);
@@ -70,10 +76,20 @@ export const HomeScreen: React.FC = () => {
             </>
           )}
         </div>
-        <div className="mt-4 flex pl-4 justify-center self-center lg:w-4/5 lg:pl-0">
+        <div className="mt-6 bg-gradient-to-b from-white to-neutral-100 lg:hidden">
+          <div className="flex flex-col gap-4 px-4 pb-6">
+            <h2 className="text-lg font-medium">direct-auto-rent.com</h2>
+            <p className="text-sm">{FOOTER_INFO_TEXT_1}</p>
+            <p className="text-sm">{FOOTER_INFO_TEXT_2}</p>
+          </div>
+        </div>
+        <div className="mt-4 flex justify-center self-center pl-4 lg:w-4/5 lg:pl-0">
           <OfferCard />
         </div>
         <hr className="mt-10 w-full bg-smoky lg:flex" />
+        <div className="w-full py-4">
+          <HomeFooterInfo />
+        </div>
       </div>
     </section>
   );
