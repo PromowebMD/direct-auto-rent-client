@@ -19,7 +19,7 @@ export const Layout: React.FC = () => {
       </div>
       <FloatingSocialButton />
       {location.pathname !== "/" && (
-        <div className="h-20">
+        <div className="ht-10">
           <Divider />
         </div>
       )}

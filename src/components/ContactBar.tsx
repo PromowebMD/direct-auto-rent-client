@@ -3,7 +3,7 @@ import phoneIcon from "../assets/phone_icon.svg";
 
 export const ContactBar = () => {
   return (
-    <div className="hidden h-fit w-full justify-end bg-transparent text-sm font-normal text-white max-w-[1000px] font-noToSans lg:flex">
+    <div className="hidden h-fit w-full justify-end bg-transparent pr-2 text-sm font-normal text-white max-w-[1000px] font-noToSans lg:flex">
       <div className="flex justify-end">
         <div className="flex gap-6 py-1">
           <div className="flex items-center gap-4">
