@@ -87,7 +87,7 @@ export const HomeScreen: React.FC = () => {
           <OfferCard />
         </div>
         <hr className="mt-10 w-full bg-smoky lg:flex" />
-        <div className="w-full py-4">
+        <div className="w-full self-center py-4 lg:max-w-[1250px]">
           <HomeFooterInfo />
         </div>
       </div>
