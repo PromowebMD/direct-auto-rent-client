@@ -16,6 +16,7 @@ import { getCars } from "../api/carsRequest.ts";
 import { LoaderComponent } from "../components/LoaderComponent.tsx";
 import { Check } from "react-feather";
 import { HomeFooterInfo } from "../components/HomeFooterInfo.tsx";
+import { Divider } from "../components/Divider.tsx";
 
 export const HomeScreen: React.FC = () => {
   const [cars, setCars] = useState<ICar[]>([]);
@@ -86,7 +87,7 @@ export const HomeScreen: React.FC = () => {
         <div className="mt-4 flex justify-center self-center pl-4 lg:w-4/5 lg:pl-0">
           <OfferCard />
         </div>
-        <hr className="mt-10 w-full bg-smoky lg:flex" />
+        <Divider />
         <div className="w-full self-center py-4 lg:max-w-[1250px]">
           <HomeFooterInfo />
         </div>

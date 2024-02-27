@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "../components/Navbar.tsx";
-import { FooterNav } from "../components/FooterNav.tsx";
+import { Divider } from "../components/Divider.tsx";
 import { FooterInfo } from "../components/FooterInfo.tsx";
 import { FloatingSocialButton } from "../components/FloatingSocialButton.tsx";
 import { Toaster } from "react-hot-toast";
@@ -20,7 +20,7 @@ export const Layout: React.FC = () => {
       <FloatingSocialButton />
       {location.pathname !== "/" && (
         <div className="h-20">
-          <FooterNav />
+          <Divider />
         </div>
       )}
       <div className="mt-6 flex h-full flex-col place-self-center w-[80%]">
