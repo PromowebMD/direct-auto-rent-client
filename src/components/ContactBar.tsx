@@ -2,8 +2,8 @@ import { MapPin, Phone } from "react-feather";
 
 export const ContactBar = () => {
   return (
-    <div className="hidden h-fit w-full justify-center text-sm font-normal text-white bg-primary font-noToSans lg:flex">
-      <div className="flex justify-end w-[76%]">
+    <div className="hidden h-fit w-full max-w-[1000px] justify-end text-sm font-normal text-white bg-transparent font-noToSans lg:flex">
+      <div className="flex justify-end">
         <div className="flex gap-6 py-1">
           <div className="flex items-center gap-4">
             <MapPin className="w-[20px] h-[20px]" />

@@ -5,7 +5,6 @@ import { FooterNav } from "../components/FooterNav.tsx";
 import { FooterInfo } from "../components/FooterInfo.tsx";
 import { FloatingSocialButton } from "../components/FloatingSocialButton.tsx";
 import { Toaster } from "react-hot-toast";
-import { ContactBar } from "../components/ContactBar.tsx";
 
 export const Layout: React.FC = () => {
   const location = useLocation();
@@ -13,7 +12,6 @@ export const Layout: React.FC = () => {
     <main className="flex h-full flex-1 flex-col justify-between">
       <Toaster />
       <div className="h-fit bg-primary">
-        <ContactBar />
         {location.pathname !== "/" && <Navbar />}
       </div>
       <div className="flex h-full flex-1 flex-col">
