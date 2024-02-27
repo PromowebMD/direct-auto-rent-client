@@ -137,11 +137,14 @@ export const CarsScreen: React.FC = () => {
     let sortedSearch = carList;
     if (sortValue === SortSearch.RECOMMENDED) {
       setSortSearch(SortSearch.RECOMMENDED);
+      sortedSearch = carList.sort(
+          (first, second) => first.currentPrice - second.currentPrice,
+      );
     }
     if (sortValue === SortSearch.ASCENDED) {
       setSortSearch(SortSearch.ASCENDED);
       sortedSearch = carList.sort(
-        (first, second) => second.currentPrice - first.currentPrice,
+        (first, second) => first.currentPrice - second.currentPrice,
       );
     } else if (sortValue === SortSearch.DESCENDENT) {
       setSortSearch(SortSearch.DESCENDENT);
