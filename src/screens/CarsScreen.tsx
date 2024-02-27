@@ -36,7 +36,6 @@ const categoryFilters = {
 };
 
 enum SortSearch {
-  RECOMMENDED,
   DESCENDENT,
   ASCENDED,
 }
@@ -46,9 +45,7 @@ export const CarsScreen: React.FC = () => {
   const [visibleCarList, setVisibleCarList] = useState<ICar[]>([]);
   const [showMoreBtn, setShowMoreBtn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [sortSearch, setSortSearch] = useState<SortSearch>(
-    SortSearch.RECOMMENDED,
-  );
+  const [sortSearch, setSortSearch] = useState<SortSearch>(SortSearch.ASCENDED);
   const pickUpDate = useSelector((state: RootState) => state.pickUpDate);
   const returnDate = useSelector((state: RootState) => state.returnDate);
 
@@ -135,12 +132,6 @@ export const CarsScreen: React.FC = () => {
   const handleSortSearch = (sortValue: SortSearch) => {
     setIsLoading(true);
     let sortedSearch = carList;
-    if (sortValue === SortSearch.RECOMMENDED) {
-      setSortSearch(SortSearch.RECOMMENDED);
-      sortedSearch = carList.sort(
-          (first, second) => first.currentPrice - second.currentPrice,
-      );
-    }
     if (sortValue === SortSearch.ASCENDED) {
       setSortSearch(SortSearch.ASCENDED);
       sortedSearch = carList.sort(
@@ -187,12 +178,6 @@ export const CarsScreen: React.FC = () => {
                 Sortați după
               </span>
               <div className="flex h-fit w-full list-none flex-wrap items-center justify-center gap-2 rounded-full py-1 text-center bg-lightGray">
-                <button
-                  className={`w-full rounded-full px-2 max-w-[200px] hover:bg-gray-100 ${sortSearch === SortSearch.RECOMMENDED && "bg-white"}`}
-                  onClick={() => handleSortSearch(SortSearch.RECOMMENDED)}
-                >
-                  Recomandat
-                </button>
                 <button
                   className={`w-full rounded-full px-2 max-w-[200px] hover:bg-gray-100 ${sortSearch === SortSearch.ASCENDED && "bg-white"}`}
                   onClick={() => handleSortSearch(SortSearch.ASCENDED)}
