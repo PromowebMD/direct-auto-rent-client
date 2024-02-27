@@ -10,7 +10,6 @@ export const HomeFooterInfo: React.FC = () => {
     <div className="flex h-full w-full flex-col items-center justify-center px-4">
       <div className="flex w-full flex-col gap-4 lg:w-fit lg:flex-row">
         <div className="hidden w-full flex-col lg:flex lg:w-1/3">
-          <h2 className="mb-4 text-lg font-medium">direct-auto-rent.com</h2>
           <p>{FOOTER_INFO_TEXT_1}</p>
           <p className="mt-2">{FOOTER_INFO_TEXT_2}</p>
           <h3 className="my-6 text-sm font-normal">CONTACTEAZĂ-NE:</h3>
