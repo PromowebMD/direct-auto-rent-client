@@ -34,7 +34,7 @@ export const FloatingSocialButton: React.FC = () => {
         break;
       }
       case SocialMedia.WHATSAPP: {
-        socialURI = `https://wa.me/${PHONE_NUMBER}`;
+        socialURI = `https://wa.me/+373${PHONE_NUMBER}`;
         break;
       }
     }
