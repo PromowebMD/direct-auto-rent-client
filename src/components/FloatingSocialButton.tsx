@@ -30,7 +30,7 @@ export const FloatingSocialButton: React.FC = () => {
         break;
       }
       case SocialMedia.VIBER: {
-        socialURI = `https://viber://contact?number=%2B373${PHONE_NUMBER}`
+        socialURI = `https://viber://chat?number=%2B373${PHONE_NUMBER}`
         break;
       }
       case SocialMedia.WHATSAPP: {
