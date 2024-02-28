@@ -5,6 +5,14 @@ import whatsappIcon from "../assets/social/whatsapp.svg";
 import viberIcon from "../assets/social/viber.svg";
 import telegram from "../assets/social/telegram.svg";
 
+const PHONE_NUMBER = import.meta.env.VITE_BASE_PHONE_NUMBER;
+
+const enum SocialMedia {
+  TELEGRAM,
+  WHATSAPP,
+  VIBER,
+}
+
 export const FloatingSocialButton: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const menuRef = useRef(null);
@@ -12,6 +20,25 @@ export const FloatingSocialButton: React.FC = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleIconClick = (social: SocialMedia) => {
+    let socialURI;
+    switch (social) {
+      case SocialMedia.TELEGRAM: {
+        socialURI = `https://t.me/+373${PHONE_NUMBER}`;
+        break;
+      }
+      case SocialMedia.VIBER: {
+        socialURI = `https://viber://contact?number=%2B373${PHONE_NUMBER}`
+        break;
+      }
+      case SocialMedia.WHATSAPP: {
+        socialURI = `https://wa.me/${PHONE_NUMBER}`;
+        break;
+      }
+    }
+    window.open(socialURI, "_blank");
   };
 
   return (
@@ -25,24 +52,24 @@ export const FloatingSocialButton: React.FC = () => {
 
       {isMenuOpen && (
         <div className="absolute right-0 bottom-16 flex flex-col gap-2 rounded-md bg-white p-1 shadow-md">
-          <a
-            href="https://www.viber.com/en/?utm_source=Partner"
+          <button
             className="rounded transition ease-in-out duration-400 hover:bg-blue-100"
+            onClick={() => handleIconClick(SocialMedia.VIBER)}
           >
-            <img src={viberIcon} alt="WhatsApp" />
-          </a>
-          <a
-            href="https://www.whatsapp.com/"
+            <img src={viberIcon} alt="Viber" />
+          </button>
+          <button
             className="rounded transition ease-in-out duration-400 hover:bg-blue-100"
+            onClick={() => handleIconClick(SocialMedia.WHATSAPP)}
           >
-            <img src={whatsappIcon} alt="Viber" />
-          </a>
-          <a
-            href="https://desktop.telegram.org/?setln=en"
+            <img src={whatsappIcon} alt="WhatsApp" />
+          </button>
+          <button
             className="rounded transition ease-in-out duration-400 hover:bg-blue-100"
+            onClick={() => handleIconClick(SocialMedia.TELEGRAM)}
           >
             <img src={telegram} alt="Telegram" />
-          </a>
+          </button>
         </div>
       )}
     </div>
