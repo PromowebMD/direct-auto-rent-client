@@ -92,9 +92,9 @@ export const FooterInfo: React.FC = () => {
       <div className="flex w-full flex-col items-center justify-center gap-4 py-5 lg:w-2/3 lg:flex-row lg:justify-between lg:self-center">
         <p className="text-sm text-gray-400">
           {COPY_RIGHTS}
-          <span className="ml-1 underline">Promoweb.md</span>
+          <a href="https://promoweb.md/" className="ml-1 underline">Promoweb.md</a>
         </p>
-        <img src={companyLogo} alt="" className="max-w-[117px]" />
+        <a href="https://promoweb.md/"><img src={companyLogo} alt="" className="max-w-[117px]"/></a>
       </div>
     </div>
   );
