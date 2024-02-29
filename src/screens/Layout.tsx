@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "../components/Navbar.tsx";
-import { Divider } from "../components/Divider.tsx";
 import { FooterInfo } from "../components/FooterInfo.tsx";
 import { FloatingSocialButton } from "../components/FloatingSocialButton.tsx";
 import { Toaster } from "react-hot-toast";
@@ -18,13 +17,8 @@ export const Layout: React.FC = () => {
         <Outlet />
       </div>
       <FloatingSocialButton />
-      {location.pathname !== "/" && (
-        <div className="ht-10">
-          <Divider />
-        </div>
-      )}
-      <div className="mt-6 flex h-full flex-col place-self-center w-[80%]">
-        {location.pathname !== "/" && <FooterInfo />}
+      <div className="mt-6 flex h-full w-full flex-col place-self-center">
+        <FooterInfo />
       </div>
     </main>
   );
