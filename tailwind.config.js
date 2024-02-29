@@ -5,11 +5,11 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "footer-main": "url('../src/assets/footer/footer_main.svg')",
+        "footer-main": "url('../src/assets/footer/footer_main.png')",
         "footer-main-mobile":
-          "url('../src/assets/footer/footer_main_mobile.svg')",
+          "url('../src/assets/footer/footer_main_mobile.png')",
         "footer-secondary-mobile":
-          "url('../src/assets/footer/footer_secondary_mobile.svg')",
+          "url('../src/assets/footer/footer_secondary_mobile.png')",
       },
       fontFamily: {
         oswald: ['"Oswald"'],
