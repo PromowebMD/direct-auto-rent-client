@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", "./src/assets/footer/*.png"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       backgroundImage: {
-        "footer-main": "url('./src/assets/footer/footer_main.png')",
+        "footer-main": "url('../src/assets/footer/footer_main.svg')",
         "footer-main-mobile":
-          "url('./src/assets/footer/footer_main_mobile.svg')",
+          "url('../src/assets/footer/footer_main_mobile.svg')",
         "footer-secondary-mobile":
-          "url('./src/assets/footer/footer_secondary_mobile.svg')",
+          "url('../src/assets/footer/footer_secondary_mobile.svg')",
       },
       fontFamily: {
         oswald: ['"Oswald"'],
