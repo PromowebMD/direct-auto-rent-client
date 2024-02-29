@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "footer-main": "url('./src/assets/footer/footer_main.svg')",
+        "footer-main": "url('./src/assets/footer/footer_main.png')",
         "footer-main-mobile":
           "url('./src/assets/footer/footer_main_mobile.svg')",
         "footer-secondary-mobile":
