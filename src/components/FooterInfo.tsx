@@ -19,8 +19,8 @@ const linkList = [
 export const FooterInfo: React.FC = () => {
   return (
     <div className="flex w-full flex-col pb-4">
-      <div className="flex flex-col lg:flex-row-reverse">
-        <div className="w-full bg-cover bg-no-repeat bg-footer-main-mobile lg:bg-footer-main lg:w-1/3">
+      <div className="flex flex-col lg:flex-row-reverse lg:bg-footer-main lg:bg-no-repeat lg:bg-cover">
+        <div className="w-full bg-cover bg-no-repeat bg-footer-main-mobile lg:bg-none lg:w-1/3">
           <div className="flex h-full flex-col gap-2 bg-white p-5 bg-opacity-85">
             <h2 className="text-xl font-semibold font-oswald">
               <span>BINE AȚI VENIT LA</span>
@@ -29,7 +29,7 @@ export const FooterInfo: React.FC = () => {
             <p className="text-lg font-noToSans">{FOOTER_INFO_TEXT}</p>
           </div>
         </div>
-        <div className="w-full bg-cover bg-no-repeat bg-footer-secondary-mobile lg:bg-footer-secondary lg:w-2/3">
+        <div className="w-full bg-cover bg-no-repeat bg-footer-secondary-mobile lg:bg-none lg:w-2/3">
           <div className="flex h-full flex-col gap-10 bg-opacity-70 px-5 py-7 bg-primary lg:flex-row lg:justify-center">
             <div className="flex flex-col gap-4">
               <img src={logoIcon} alt="" className="max-w-[209px]" />
