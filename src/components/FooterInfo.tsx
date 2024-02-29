@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  CONTACT_LIST,
-  COPY_RIGHTS,
-  FOOTER_INFO_TEXT,
-} from "../utils/appText.ts";
+import { COPY_RIGHTS, FOOTER_INFO_TEXT } from "../utils/appText.ts";
 import companyLogo from "../assets/footer/company_logo.svg";
 import logoIcon from "../assets/logo.svg";
 import { Link } from "react-router-dom";
@@ -17,6 +13,10 @@ const linkList = [
 ];
 
 export const FooterInfo: React.FC = () => {
+  const handleOnEmailClick = () => {
+    window.open("mailto:email@example.com?subject=subject");
+  };
+
   return (
     <div className="flex w-full flex-col pb-4">
       <div className="flex flex-col lg:bg-footer-main lg:flex-row-reverse lg:bg-cover lg:bg-no-repeat">
@@ -53,34 +53,44 @@ export const FooterInfo: React.FC = () => {
                 CONTACTE
               </h3>
               <div className="flex flex-col gap-2 pt-4">
-                {CONTACT_LIST.map((contact, index) => {
-                  return (
-                    index < CONTACT_LIST.length - 2 && (
-                      <div
-                        key={contact.title + contact.value}
-                        className="flex gap-1 text-base text-white font-noToSans"
-                      >
-                        <span className="font-semibold">{contact.title}</span>
-                        <span
-                          className={`font-light ${index > 2 && "underline decoration-1 underline-offset-4"}`}
-                        >
-                          {contact.value}
-                        </span>
-                      </div>
-                    )
-                  );
-                })}
+                <div className="flex flex-col gap-1 text-base text-white font-noToSans">
+                  <span className="font-semibold">
+                    <span>Tel:</span>
+                    <a href="tel:+373079167 777" className="ml-1 font-light">
+                      +373 (79) 167 777
+                    </a>
+                  </span>
+                  <span>
+                    <span className="font-semibold">Program de lucru:</span>
+                    <span className="ml-1 font-light">24/7</span>
+                  </span>
+                  <span>
+                    <span className="font-semibold">Tel:</span>
+                    <button className="ml-1 font-light">
+                      +373 (78) 333 100
+                    </button>
+                  </span>
+                  <span>
+                    <span className="font-semibold">E-mail:</span>
+                    <button
+                      className="ml-1 font-light underline decoration-1 underline-offset-4"
+                      onClick={handleOnEmailClick}
+                    >
+                      autorentcarsolutions@gmail.com
+                    </button>
+                  </span>
+                </div>
                 <div className="flex flex-col gap-1 text-base text-white font-noToSans lg:flex-row lg:gap-8">
                   <span className="font-semibold">
-                    {CONTACT_LIST[CONTACT_LIST.length - 2].title}
+                    str.
                     <span className="ml-1 font-light underline decoration-1 underline-offset-4">
-                      {CONTACT_LIST[CONTACT_LIST.length - 2].value}
+                      Dacia 80/3
                     </span>
                   </span>
                   <span className="font-semibold">
-                    {CONTACT_LIST[CONTACT_LIST.length - 1].title}
+                    str.
                     <span className="ml-1 font-light underline decoration-1 underline-offset-4">
-                      {CONTACT_LIST[CONTACT_LIST.length - 1].value}
+                      Bd. Ștefan cel Mare 123
                     </span>
                   </span>
                 </div>
@@ -92,9 +102,13 @@ export const FooterInfo: React.FC = () => {
       <div className="flex w-full flex-col items-center justify-center gap-4 py-5 lg:w-2/3 lg:flex-row lg:justify-between lg:self-center">
         <p className="text-sm text-gray-400">
           {COPY_RIGHTS}
-          <a href="https://promoweb.md/" className="ml-1 underline">Promoweb.md</a>
+          <a href="https://promoweb.md/" className="ml-1 underline">
+            Promoweb.md
+          </a>
         </p>
-        <a href="https://promoweb.md/"><img src={companyLogo} alt="" className="max-w-[117px]"/></a>
+        <a href="https://promoweb.md/">
+          <img src={companyLogo} alt="" className="max-w-[117px]" />
+        </a>
       </div>
     </div>
   );

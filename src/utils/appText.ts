@@ -9,15 +9,6 @@ export const FOOTER_INFO_TEXT =
   "DIRECTAUTORENT - destinația dvs. de încredere pentru experiențe deînchiriere auto fără probleme și fără bătăi de cap!" +
   "La DIRECTAUTORENT, ne străduim să vă oferim cea mai bună selecție de mașini de închiriat, împreună cu servicii de înaltă calitate, astfel încât să vă puteți concentra pe călătoria dumneavoastră și să vă bucurați de fiecare moment.";
 
-export const CONTACT_LIST = [
-  { title: "Tel:", value: "+373 (79) 167 777" },
-  { title: "Program de lucru:", value: "24/7" },
-  { title: "Tel:", value: "+373 (78) 333 100" },
-  { title: "E-mail:", value: "autorentcarsolutions@gmail.com" },
-  { title: "str.", value: "Dacia 80/3" },
-  { title: "str.", value: "Bd. Ștefan cel Mare 123" },
-];
-
 export const COPY_RIGHTS = `Copyright © ${format(new Date(), "yyyy")} Direct Auto Rent. Creat de`;
 
 export const SERVICE_RENT_TEXT =
