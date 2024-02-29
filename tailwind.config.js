@@ -6,8 +6,10 @@ export default {
     extend: {
       backgroundImage: {
         "footer-main": "url('../src/assets/footer/footer_main.png')",
+
         "footer-main-mobile":
           "url('../src/assets/footer/footer_main_mobile.png')",
+
         "footer-secondary-mobile":
           "url('../src/assets/footer/footer_secondary_mobile.png')",
       },
