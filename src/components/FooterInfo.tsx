@@ -83,15 +83,15 @@ export const FooterInfo: React.FC = () => {
                 <div className="flex flex-col gap-1 text-base text-white font-noToSans lg:flex-row lg:gap-8">
                   <span className="font-semibold">
                     str.
-                    <span className="ml-1 font-light underline decoration-1 underline-offset-4">
+                    <a href="https://maps.app.goo.gl/2VAoMJ7QAogmhYdd8" className="ml-1 font-light underline decoration-1 underline-offset-4">
                       Dacia 80/3
-                    </span>
+                    </a>
                   </span>
                   <span className="font-semibold">
                     str.
-                    <span className="ml-1 font-light underline decoration-1 underline-offset-4">
+                    <a href="https://maps.app.goo.gl/MVhE9uDjdqozmHVp7" className="ml-1 font-light underline decoration-1 underline-offset-4">
                       Bd. Ștefan cel Mare 123
-                    </span>
+                    </a>
                   </span>
                 </div>
               </div>
