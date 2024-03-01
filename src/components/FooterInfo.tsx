@@ -1,5 +1,9 @@
 import React from "react";
-import {COPY_RIGHTS, FOOTER_INFO_TEXT_1, FOOTER_INFO_TEXT_2} from "../utils/appText.ts";
+import {
+  COPY_RIGHTS,
+  FOOTER_INFO_TEXT_1,
+  FOOTER_INFO_TEXT_2,
+} from "../utils/appText.ts";
 import companyLogo from "../assets/footer/company_logo.svg";
 import logoIcon from "../assets/logo.svg";
 import { Link } from "react-router-dom";
@@ -26,7 +30,7 @@ export const FooterInfo: React.FC = () => {
               <span>BINE AȚI VENIT LA</span>
               <span className="ml-1 text-primary">DIRECTAUTORENT</span>
             </h2>
-            <span className="text-base font-noToSans w-2/3">
+            <span className="text-base font-noToSans lg:w-2/3">
               <p>{FOOTER_INFO_TEXT_1}</p>
               <p>{FOOTER_INFO_TEXT_2}</p>
             </span>
@@ -86,13 +90,19 @@ export const FooterInfo: React.FC = () => {
                 <div className="flex flex-col gap-1 text-base text-white font-noToSans lg:flex-row lg:gap-8">
                   <span className="font-semibold">
                     str.
-                    <a href="https://maps.app.goo.gl/2VAoMJ7QAogmhYdd8" className="ml-1 font-light underline decoration-1 underline-offset-4">
+                    <a
+                      href="https://maps.app.goo.gl/2VAoMJ7QAogmhYdd8"
+                      className="ml-1 font-light underline decoration-1 underline-offset-4"
+                    >
                       Dacia 80/3
                     </a>
                   </span>
                   <span className="font-semibold">
                     str.
-                    <a href="https://maps.app.goo.gl/MVhE9uDjdqozmHVp7" className="ml-1 font-light underline decoration-1 underline-offset-4">
+                    <a
+                      href="https://maps.app.goo.gl/MVhE9uDjdqozmHVp7"
+                      className="ml-1 font-light underline decoration-1 underline-offset-4"
+                    >
                       Bd. Ștefan cel Mare 123
                     </a>
                   </span>
