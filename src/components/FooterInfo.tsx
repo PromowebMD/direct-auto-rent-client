@@ -54,15 +54,15 @@ export const FooterInfo: React.FC = () => {
               </h3>
               <div className="flex flex-col gap-2 pt-4">
                 <div className="flex flex-col gap-1 text-base text-white font-noToSans">
+                  <span>
+                    <span className="font-semibold">Program de lucru:</span>
+                    <span className="ml-1 font-light">24/7</span>
+                  </span>
                   <span className="font-semibold">
                     <span>Tel:</span>
                     <a href="tel:+373079167777" className="ml-1 font-light">
                       +373 (79) 167 777
                     </a>
-                  </span>
-                  <span>
-                    <span className="font-semibold">Program de lucru:</span>
-                    <span className="ml-1 font-light">24/7</span>
                   </span>
                   <span>
                     <span className="font-semibold">Tel:</span>
