@@ -27,4 +27,4 @@ export const SERVICE_TAXI_TEXT =
 export const SERVICE_TOURISM_TEXT =
   "Deseori organizăm excursii la toate mănăstirile moldovenești și românești pentru clienții noștri. Oferim un nivel ridicat de confort și siguranță în timpul acestor călătorii. De asemenea, ghizii noștri profesioniști garantează o călătorie interesantă și fascinantă.";
 
-export const ABOUT_CONTENT_TEXT = "Dacă sunteți interesat de unde să închiriați o mașină în Moldova și Chișinău Direct Auto rent vă oferă servicii de închiriere auto cu sau fără șofer pentru orice perioadă de interes. Ați ajuns pe pagina de contact a site-ului de închirieri auto din Moldova unde puteți completa un formular pentru a contacta managerii noștri."
+export const ABOUT_CONTENT_TEXT = "Bine ați venit la DIRECTAUTORENT! Suntem aici să vă oferim cele mai bune experiențe de călătorie. Cu o flotă diversificată de mașini și tarife transparente, vă asigurăm că veți găsi vehiculul perfect pentru orice ocazie. Libertatea de a explora în propriul ritm este acum mai aproape ca niciodată. Alegeți DIRECTAUTORENT pentru călătorii fără griji și pline de aventură!"
