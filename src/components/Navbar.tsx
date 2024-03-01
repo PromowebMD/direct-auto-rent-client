@@ -12,7 +12,7 @@ type NavbarProps = {
 export const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const linkList = [
     { title: "ACASĂ", link: "/" },
-    { title: "DESPORE NOI", link: "/about" },
+    { title: "DESPRE NOI", link: "/about" },
     { title: "SERVICII", link: "/services" },
     { title: "AUTOMOBILE", link: "/cars" },
   ];
