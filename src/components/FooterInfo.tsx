@@ -32,7 +32,7 @@ export const FooterInfo: React.FC = () => {
         <div className="w-full bg-cover bg-no-repeat bg-footer-secondary-mobile lg:w-2/3 lg:bg-none">
           <div className="flex h-full flex-col gap-10 bg-opacity-70 px-5 py-7 bg-primary lg:flex-row lg:justify-center">
             <div className="flex flex-col gap-4 lg:items-center">
-              <img src={logoIcon} alt="" className="max-w-[165px]" />
+              <img src={logoIcon} alt="" className="max-w-[131px]" />
               <div className="flex flex-col gap-2 text-base font-semibold text-white font-oswald">
                 {linkList.map((item) => {
                   return (
