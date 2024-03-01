@@ -8,13 +8,15 @@ export const ContactBar = () => {
         <div className="flex gap-6 py-1">
           <div className="flex items-center gap-4">
             <img src={locationIcon} alt="" className="w-[18px] h-[18px]" />
-            <p>Ștefan cel Mare 123</p>
-            <p>Dacia 80/3</p>
+            <a href="https://maps.app.goo.gl/MVhE9uDjdqozmHVp7">
+              Ștefan cel Mare 123
+            </a>
+            <a href="https://maps.app.goo.gl/2VAoMJ7QAogmhYdd8">Dacia 80/3</a>
           </div>
           <div className="flex items-center gap-4">
             <img src={phoneIcon} alt="" className="w-[16px] h-[16px]" />
-            <p>+373 (79) 167 777</p>
-            <p>+373 (79) 167 777</p>
+            <a href="tel:+373079167777">+373 (79) 167 777</a>
+            <a href="tel:+37378333100">+373 (78) 333 100</a>
           </div>
         </div>
       </div>
