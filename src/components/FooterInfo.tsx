@@ -48,7 +48,7 @@ export const FooterInfo: React.FC = () => {
                 })}
               </div>
             </div>
-            <div className="lg:mt-8">
+            <div className="lg:mt-[1.1rem]">
               <h3 className="text-base font-semibold text-white font-oswald">
                 CONTACTE
               </h3>
