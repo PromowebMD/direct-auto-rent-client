@@ -5,8 +5,9 @@ export const CALENDAR_CANCEL_RESERVATION =
   "Anulare Gratuită La Majoritatea Rezervărilor";
 export const USER_AGE_CONFIRMATION = "Vârsta Șoferului Între 30-65?";
 
-export const FOOTER_INFO_TEXT =
-  "DIRECTAUTORENT - destinația dvs. de încredere pentru experiențe deînchiriere auto fără probleme și fără bătăi de cap!" +
+export const FOOTER_INFO_TEXT_1 =
+  "DIRECTAUTORENT - destinația dvs. de încredere pentru experiențe deînchiriere auto fără probleme și fără bătăi de cap!";
+export const FOOTER_INFO_TEXT_2 =
   "La DIRECTAUTORENT, ne străduim să vă oferim cea mai bună selecție de mașini de închiriat, împreună cu servicii de înaltă calitate, astfel încât să vă puteți concentra pe călătoria dumneavoastră și să vă bucurați de fiecare moment.";
 
 export const COPY_RIGHTS = `Copyright © ${format(new Date(), "yyyy")} Direct Auto Rent. Creat de`;

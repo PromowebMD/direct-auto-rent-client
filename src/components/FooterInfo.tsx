@@ -1,5 +1,5 @@
 import React from "react";
-import { COPY_RIGHTS, FOOTER_INFO_TEXT } from "../utils/appText.ts";
+import {COPY_RIGHTS, FOOTER_INFO_TEXT_1, FOOTER_INFO_TEXT_2} from "../utils/appText.ts";
 import companyLogo from "../assets/footer/company_logo.svg";
 import logoIcon from "../assets/logo.svg";
 import { Link } from "react-router-dom";
@@ -20,16 +20,19 @@ export const FooterInfo: React.FC = () => {
   return (
     <div className="flex w-full flex-col pb-4">
       <div className="flex flex-col lg:bg-footer-main lg:flex-row-reverse lg:bg-cover lg:bg-no-repeat">
-        <div className="w-full bg-cover bg-no-repeat bg-footer-main-mobile lg:w-1/3 lg:bg-none">
+        <div className="w-full bg-cover bg-no-repeat bg-footer-main-mobile lg:w-2/5 lg:bg-none">
           <div className="flex h-full flex-col justify-center gap-2 bg-white p-7 bg-opacity-85">
             <h2 className="text-xl font-semibold font-oswald">
               <span>BINE AȚI VENIT LA</span>
               <span className="ml-1 text-primary">DIRECTAUTORENT</span>
             </h2>
-            <p className="text-base font-noToSans">{FOOTER_INFO_TEXT}</p>
+            <span className="text-base font-noToSans w-2/3">
+              <p>{FOOTER_INFO_TEXT_1}</p>
+              <p>{FOOTER_INFO_TEXT_2}</p>
+            </span>
           </div>
         </div>
-        <div className="w-full bg-cover bg-no-repeat bg-footer-secondary-mobile lg:w-2/3 lg:bg-none">
+        <div className="w-full bg-cover bg-no-repeat bg-footer-secondary-mobile lg:w-3/5 lg:bg-none">
           <div className="flex h-full flex-col gap-10 bg-opacity-70 px-5 py-7 bg-primary lg:flex-row lg:justify-center">
             <div className="flex flex-col gap-4 lg:items-center">
               <img src={logoIcon} alt="" className="max-w-[131px]" />
