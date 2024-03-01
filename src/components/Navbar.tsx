@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
     <div
       className={`flex flex-col w-full py-4 px-4 lg:px-0 lg:py-1 h-fit items-center justify-center bg-primary ${className}`}
     >
-      <div className="flex w-full justify-between md:gap-44 lg:items-end lg:justify-evenly">
+      <div className="flex w-full justify-between md:gap-44 lg:items-center lg:justify-evenly">
         <Link to="/">
           <img
             src={logo}
