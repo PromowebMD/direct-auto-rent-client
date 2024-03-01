@@ -149,8 +149,8 @@ export const CarsScreen: React.FC = () => {
   };
 
   return (
-    <section className="mb-10 grid place-items-center">
-      <div className="px-4 md:w-4/5">
+    <section className="mb-10 grid place-items-center w-full">
+      <div className="w-full">
         <div className="mt-2">
           <EditTab />
         </div>

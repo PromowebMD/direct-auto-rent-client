@@ -13,9 +13,15 @@ export const Layout: React.FC = () => {
       <div className="h-fit bg-primary">
         {location.pathname !== "/" && <Navbar />}
       </div>
-      <div className="flex h-full flex-1 flex-col">
-        <Outlet />
-      </div>
+      {location.pathname === "/" ? (
+        <div className="flex h-full flex-1 flex-col">
+          <Outlet />
+        </div>
+      ) : (
+        <div className="flex h-full w-full flex-1 flex-col self-center px-6 lg:max-w-[75%] lg:px-0">
+          <Outlet />
+        </div>
+      )}
       <FloatingSocialButton />
       <div className="mt-6 flex h-full w-full flex-col place-self-center">
         <FooterInfo />
