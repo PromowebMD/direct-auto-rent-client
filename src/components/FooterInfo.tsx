@@ -11,7 +11,7 @@ import arrowIcon from "../assets/footer/arow_icon.svg";
 
 const linkList = [
   { title: "ACASĂ", link: "/" },
-  { title: "DESPORE NOI", link: "/about" },
+  { title: "DESPRE NOI", link: "/about" },
   { title: "SERVICII", link: "/services" },
   { title: "AUTOMOBILE", link: "/cars" },
 ];
