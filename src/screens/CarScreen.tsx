@@ -52,7 +52,7 @@ export const CarScreen: React.FC = () => {
       <div className="w-full lg:mt-2">
         <EditTab />
       </div>
-      <div className="px-4">
+      <div className="px-6 lg:px-0">
         {isLoading ? (
           <LoaderComponent />
         ) : (
