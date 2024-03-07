@@ -15,9 +15,27 @@ export const CarCard: React.FC<CarCardProps> = ({ carItem }) => {
   const totalDays = useSelector((state: RootState) => state.totalDays);
 
   return (
-    <div className="flex w-full flex-col items-center justify-between lg:flex-row">
-      <CarItem className="flex-row-reverse lg:flex-row" carItem={carItem} />
-      <div className="flex w-full flex-row-reverse justify-evenly lg:w-fit lg:flex-col">
+    <div className="relative flex w-full flex-col items-center justify-between lg:flex-row">
+      <CarItem className="flex-col lg:flex-row" carItem={carItem} />
+      <div className="absolute right-0 bottom-0 lg:hidden">
+        <Link
+          to={`/cars/${carItem.id}`}
+          className="flex h-fit items-center rounded px-2 py-1 font-bold text-white bg-accent"
+        >
+          VEDEȚI OFERTA
+        </Link>
+      </div>
+      <div className="absolute right-0 bottom-1/2 lg:hidden">
+        <h3 className="text-right text-sm font-oswald">
+          {pickUpDate !== null && returnDate !== null
+            ? `Prețul pentru ${totalDays} zile`
+            : "Prețul pentru 30+ zile"}
+        </h3>
+        <h3 className="text-right text-2xl font-oswald">
+          {carItem.currentPrice} EUR
+        </h3>
+      </div>
+      <div className="hidden w-full flex-row-reverse justify-evenly lg:flex lg:w-fit lg:flex-col">
         <div>
           <h3 className="text-right text-sm font-oswald">
             {pickUpDate !== null && returnDate !== null

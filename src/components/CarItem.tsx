@@ -5,6 +5,10 @@ import transmissionImg from "../assets/cars/transmission.svg";
 import baggageBig from "../assets/cars/baggage_big.svg";
 import baggageSmall from "../assets/cars/baggage_small.svg";
 import distanceLimit from "../assets/cars/distance_limit.svg";
+import {
+  capitalizeFirstLetter,
+  translateDistanceLimit,
+} from "../utils/textFormat.ts";
 
 type CarItemProps = {
   carItem: ICar;
@@ -14,32 +18,40 @@ type CarItemProps = {
 export const CarItem: React.FC<CarItemProps> = ({ carItem, className }) => {
   const carDescriptionList = [
     { label: `${carItem.seats} locuri`, icon: seatsImg },
-    { label: carItem.transmission, icon: transmissionImg },
     { label: `${carItem.bigBaggage} bagaj mare`, icon: baggageBig },
-    { label: `${carItem.smallBaggage} bagaj mic`, icon: baggageSmall },
     {
-      label: `kilometraj ${carItem.distanceLimit.toLowerCase()}`,
+      label: `kilometraj ${translateDistanceLimit(carItem.distanceLimit)}`,
       icon: distanceLimit,
     },
+    {
+      label: capitalizeFirstLetter(carItem.transmission.toLowerCase()),
+      icon: transmissionImg,
+    },
+    { label: `${carItem.smallBaggage} bagaj mic`, icon: baggageSmall },
   ];
 
   return (
     <div
-      className={`w-full lg:w-fit flex items-center gap-6 font-oswald ${className}`}
+      className={`flex w-full items-start gap-2 font-oswald lg:w-fit lg:items-center lg:gap-6 ${className}`}
     >
+      <h2 className="text-2xl lg:hidden">{`${carItem.title} ${carItem.year}`.toUpperCase()}</h2>
       <span className="max-w-[370px]">
         <img src={carItem.primaryImage} alt="" />
       </span>
       <div className="flex w-full flex-col gap-2 lg:w-fit">
-        <h2 className="text-xl">{`${carItem.title} ${carItem.year}`}</h2>
-        <div className="grid grid-cols-2 gap-2 font-light">
+        <h2 className="hidden text-xl lg:block">{`${carItem.title} ${carItem.year}`.toUpperCase()}</h2>
+        <div className="grid grid-cols-3 gap-2 font-normal lg:grid-cols-2">
           {carDescriptionList.map((item) => {
             return (
-              <div key={item.label} className="flex items-center gap-1">
+              <div key={item.label} className="flex w-32 lg:w-fit items-center gap-1">
                 <span>
-                  <img src={item.icon} alt="" />
+                  <img src={item.icon} alt="" className="w-[18px] h-[30px]" />
                 </span>
-                <p className="text-sm md:text-base">{item.label}</p>
+                <p
+                  className={`text-sm lg:text-base ${item.icon === distanceLimit && "text-primary"}`}
+                >
+                  {item.label}
+                </p>
               </div>
             );
           })}

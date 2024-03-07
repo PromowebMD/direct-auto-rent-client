@@ -6,7 +6,6 @@ export enum Transmission {
 export enum FuelType {
   GASOLINE = "GASOLINE",
   DIESEL = "DIESEL",
-  ELECTRIC = "ELECTRIC",
 }
 
 export enum Category {

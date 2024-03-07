@@ -191,12 +191,19 @@ export const CarsScreen: React.FC = () => {
                 </button>
               </div>
             </div>
-            <div className="mt-6 flex flex-col gap-6">
+            <div className="mt-6 flex flex-col lg:gap-8">
               {isLoading ? (
                 <LoaderComponent />
               ) : (
-                visibleCarList.map((item) => {
-                  return <CarCard key={item.id} carItem={item} />;
+                visibleCarList.map((item, index) => {
+                  return (
+                    <div key={item.id} className="w-full">
+                      <CarCard carItem={item} />
+                      <span
+                        className={`my-8 flex w-full bg-neutral-200 h-[1px] lg:hidden ${index === visibleCarList.length - 1 && "hidden"}`}
+                      ></span>
+                    </div>
+                  );
                 })
               )}
             </div>
