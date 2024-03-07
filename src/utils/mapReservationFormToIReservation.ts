@@ -21,6 +21,7 @@ export const mapReservationFormToIReservation = (
     email: reservationForm.email,
     firstName: reservationForm.firstName,
     flightNumber: reservationForm.flightNumber,
+    message: reservationForm.message,
     lastName: reservationForm.lastName,
     optionsIds: optionsIds,
     phone: reservationForm.phone,

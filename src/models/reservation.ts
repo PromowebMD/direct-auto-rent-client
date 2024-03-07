@@ -6,7 +6,7 @@ export const reservationFormSchema = z.object({
   email: z.string().email(),
   phone: z.string().min(9),
   flightNumber: z.string(),
-  message: z.string().optional(),
+  message: z.string(),
   licence: z.any(),
 });
 
@@ -43,6 +43,7 @@ export interface IReservation {
   firstName: string;
   lastName: string;
   flightNumber: string;
+  message: string;
   email: string;
   phone: string;
   optionsIds: string[];
