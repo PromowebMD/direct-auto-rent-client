@@ -13,7 +13,6 @@ const fuelFilters = {
   values: [
     { label: "Benzină", isChecked: false, value: FuelType.GASOLINE },
     { label: "Diseil", isChecked: false, value: FuelType.DIESEL },
-    { label: "Electric", isChecked: false, value: FuelType.ELECTRIC },
   ],
 };
 
