@@ -148,11 +148,11 @@ export const CarsScreen: React.FC = () => {
   };
 
   return (
-    <section className="mb-10 grid place-items-center w-full">
-      <div className="w-full">
-        <div className="mt-2">
-          <EditTab />
-        </div>
+    <section className="mb-10 grid w-full place-items-center">
+      <div className="w-full lg:mt-2">
+        <EditTab />
+      </div>
+      <div className="w-full px-6 lg:px-0">
         <div className="mt-4 flex gap-12">
           <div className="hidden flex-shrink-0 flex-col gap-4 font-oswald lg:flex">
             <FilterItem

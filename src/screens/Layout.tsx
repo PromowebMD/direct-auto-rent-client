@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "../components/Navbar.tsx";
 import { FooterInfo } from "../components/FooterInfo.tsx";
@@ -22,7 +22,7 @@ export const Layout: React.FC = () => {
           <Outlet />
         </div>
       ) : (
-        <div className="flex h-full w-full flex-1 flex-col self-center px-6 lg:max-w-[75%] lg:px-0">
+        <div className="flex h-full w-full flex-1 flex-col self-center lg:max-w-[75%]">
           <Outlet />
         </div>
       )}

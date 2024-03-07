@@ -63,10 +63,10 @@ export const CarScreen: React.FC = () => {
 
   return (
     <section className="mb-10 grid place-items-center">
+      <div className="w-full lg:mt-2">
+        <EditTab />
+      </div>
       <div className="px-4">
-        <div className="mt-2">
-          <EditTab />
-        </div>
         {isLoading ? (
           <LoaderComponent />
         ) : (
