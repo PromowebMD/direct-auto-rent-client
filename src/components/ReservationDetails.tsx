@@ -15,12 +15,12 @@ export const ReservationDetails: React.FC = () => {
   return (
     <>
       <div className="col-span-2">
-        <div className="grid gap-4 lg:grid-cols-2">
+        <div className="grid gap-4">
           <div className="grid gap-3">
             <h2 className="text-lg font-bold font-noToSans">
               O alegere excelentă!
             </h2>
-            <div className="flex flex-col gap-2">
+            <div className="grid gap-y-2 lg:grid-cols-2">
               {choiceList.map((item) => {
                 return (
                   <div

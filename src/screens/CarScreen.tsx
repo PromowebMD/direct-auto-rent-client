@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { EditTab } from "../components/EditTab.tsx";
-import { ReservationOptionsComponent } from "../components/ReservationOptionsComponent.tsx";
 import { ReservationDetails } from "../components/ReservationDetails.tsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { ICar } from "../models/car.ts";
@@ -13,14 +12,10 @@ import { useCheckCalendarDataIsValid } from "../hooks/useCheckCalendarDataIsVali
 import toast from "react-hot-toast";
 import { LoaderComponent } from "../components/LoaderComponent.tsx";
 import { CarReservationPreview } from "../components/CarReservationPreview.tsx";
+import { ReservationPreviewCard } from "../components/ReservationPreviewCard.tsx";
 
 export const CarScreen: React.FC = () => {
   const totalDays = useSelector((state: RootState) => state.totalDays);
-  const reservationOptions = useSelector(
-    (state: RootState) => state.reservationOptions,
-  );
-  const rentPrice = useSelector((state: RootState) => state.rentPrice);
-  const optionsPrice = useSelector((state: RootState) => state.optionsPrice);
   const navigation = useNavigate();
   const { carId } = useParams();
   const [carItem, setCarItem] = useState<ICar>();
@@ -43,15 +38,6 @@ export const CarScreen: React.FC = () => {
       });
   }, [carId, dispatch, totalDays]);
 
-  const priceList = [
-    { label: "1-2 zile", value: `${carItem?.rentPrice.days1To2}€` },
-    { label: "3-5 zile", value: `${carItem?.rentPrice.days3To5}€` },
-    { label: "6-8 zile", value: `${carItem?.rentPrice.days6To8}€` },
-    { label: "9-14 zile", value: `${carItem?.rentPrice.days9To14}€` },
-    { label: "20+ zile", value: `${carItem?.rentPrice.days20Plus}€` },
-    { label: "30+ zile", value: `${carItem?.rentPrice.days30Plus}€` },
-  ];
-
   const isCalendarDataValid = useCheckCalendarDataIsValid();
   const handleOnReservation = () => {
     if (isCalendarDataValid) {
@@ -62,7 +48,7 @@ export const CarScreen: React.FC = () => {
   };
 
   return (
-    <section className="mb-10 grid place-items-center">
+    <section className="mb-10 grid place-items-center gap-6">
       <div className="w-full lg:mt-2">
         <EditTab />
       </div>
@@ -70,61 +56,23 @@ export const CarScreen: React.FC = () => {
         {isLoading ? (
           <LoaderComponent />
         ) : (
-          <div className="mt-6 grid grid-cols-1 gap-2 lg:grid-flow-col lg:grid-cols-3">
-            <div className="col-span-2 grid place-self-center w-full">
-              {carItem && <CarReservationPreview carItem={carItem} />}
-            </div>
-            <div className="col-span-2 hidden gap-1 lg:grid">
-              <ReservationDetails />
-            </div>
-            <div className="row-span-5 flex flex-col gap-4 font-oswald">
-              <div className="flex flex-col gap-1">
-                <h2 className="place-self-center font-normal lg:place-self-start">
-                  Prețul automobilului
-                </h2>
-                <div className="grid grid-cols-2 gap-1 place-self-center lg:place-self-start">
-                  {priceList.map((item) => {
-                    return (
-                      <p key={item.label} className="font-light">
-                        {item.label} {item.value}
-                      </p>
-                    );
-                  })}
-                </div>
-                <ReservationOptionsComponent />
+          <div className="flex w-full flex-col justify-between gap-6 lg:flex-row lg:gap-0">
+            <div className="w-full">
+              <div className="col-span-2 grid w-full place-self-center">
+                {carItem && <CarReservationPreview carItem={carItem} />}
               </div>
-              <div>
-                <h2>Detalii factură</h2>
-                <p className="font-light">Taxă închiriere auto: {rentPrice}€</p>
-                {reservationOptions.map((option) => {
-                  return (
-                    option.isChecked && (
-                      <p className="font-light" key={option.id}>
-                        {`${option.title}: ${option.price * (totalDays === 0 ? 1 : totalDays)}€`}
-                      </p>
-                    )
-                  );
-                })}
-                <p>{`Prețul total:${rentPrice + optionsPrice}€`}</p>
+              <div className="flex flex-col gap-3">
+                <ReservationDetails />
               </div>
-              <button
-                type="button"
-                className="hidden h-fit w-fit place-self-center rounded px-3 py-1 text-lg font-bold text-white bg-accent lg:block"
-                onClick={handleOnReservation}
-              >
-                PLASEAZĂ COMANDA
-              </button>
             </div>
-            <div className="col-span-2 grid gap-1 lg:hidden">
-              <ReservationDetails />
+            <div className="w-full lg:max-w-[300px]">
+              {carItem && (
+                <ReservationPreviewCard
+                  carRentPrice={carItem.rentPrice}
+                  onReservation={handleOnReservation}
+                />
+              )}
             </div>
-            <button
-              type="button"
-              className="h-fit w-fit place-self-center rounded px-3 py-1 text-lg font-bold text-white bg-accent lg:hidden"
-              onClick={handleOnReservation}
-            >
-              PLASEAZĂ COMANDA
-            </button>
           </div>
         )}
       </div>

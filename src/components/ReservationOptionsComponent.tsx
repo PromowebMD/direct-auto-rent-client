@@ -24,7 +24,7 @@ export const ReservationOptionsComponent: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-3">
       {reservationOptions.map((item) => {
         return (
           <div
@@ -34,12 +34,12 @@ export const ReservationOptionsComponent: React.FC = () => {
             <input
               id={item.id}
               type="checkbox"
-              className="scale-125 cursor-pointer accent-primary"
+              className="w-[18px] h-[18px] cursor-pointer accent-primary"
               checked={item.isChecked}
               onChange={() => dispatch(selectReservationOption(item.id))}
             />
             <label htmlFor={item.id} className="cursor-pointer">
-              {`${item.title}: ${item.price}€/zi`}
+              {`${item.title} ${item.price}€/zi`}
             </label>
           </div>
         );
