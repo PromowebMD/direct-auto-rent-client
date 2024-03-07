@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { EditTab } from "../components/EditTab.tsx";
-import { CarItem } from "../components/CarItem.tsx";
 import { ReservationOptionsComponent } from "../components/ReservationOptionsComponent.tsx";
 import { ReservationDetails } from "../components/ReservationDetails.tsx";
 import { useNavigate, useParams } from "react-router-dom";
@@ -13,6 +12,7 @@ import { RootState } from "../state/store.ts";
 import { useCheckCalendarDataIsValid } from "../hooks/useCheckCalendarDataIsValid.ts";
 import toast from "react-hot-toast";
 import { LoaderComponent } from "../components/LoaderComponent.tsx";
+import { CarReservationPreview } from "../components/CarReservationPreview.tsx";
 
 export const CarScreen: React.FC = () => {
   const totalDays = useSelector((state: RootState) => state.totalDays);
@@ -71,10 +71,8 @@ export const CarScreen: React.FC = () => {
           <LoaderComponent />
         ) : (
           <div className="mt-6 grid grid-cols-1 gap-2 lg:grid-flow-col lg:grid-cols-3">
-            <div className="col-span-2 grid place-self-center">
-              {carItem && (
-                <CarItem carItem={carItem} className="grid lg:flex" />
-              )}
+            <div className="col-span-2 grid place-self-center w-full">
+              {carItem && <CarReservationPreview carItem={carItem} />}
             </div>
             <div className="col-span-2 hidden gap-1 lg:grid">
               <ReservationDetails />
