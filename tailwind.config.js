@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         oswald: ['"Oswald"'],
         noToSans: ['"Noto Sans"'],
+        roboto: ['"Roboto"'],
       },
       colors: {
         primary: "#2D74FF",
