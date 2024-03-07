@@ -11,6 +11,7 @@ export const ContactBar = () => {
             <a href="https://maps.app.goo.gl/MVhE9uDjdqozmHVp7">
               Ștefan cel Mare 123
             </a>
+            <img src={locationIcon} alt="" className="w-[18px] h-[18px]" />
             <a href="https://maps.app.goo.gl/2VAoMJ7QAogmhYdd8">Dacia 80/3</a>
           </div>
           <div className="flex items-center gap-4">

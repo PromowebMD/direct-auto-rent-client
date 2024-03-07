@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "../components/Navbar.tsx";
 import { FooterInfo } from "../components/FooterInfo.tsx";
@@ -7,6 +7,10 @@ import { Toaster } from "react-hot-toast";
 
 export const Layout: React.FC = () => {
   const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <main className="flex h-full flex-1 flex-col justify-between">
       <Toaster />
