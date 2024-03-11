@@ -8,6 +8,7 @@ import { RootState } from "../state/store.ts";
 import { FilterItem } from "../components/FilterItem.tsx";
 import { CarCard } from "../components/CarCard.tsx";
 import filterIcon from "../assets/cars/filter_icon.svg";
+import { FilterModal } from "../components/FilterModal.tsx";
 
 const fuelFilters = {
   title: "Tipul combustibilului",
@@ -48,6 +49,7 @@ export const CarsScreen: React.FC = () => {
   const [sortSearch, setSortSearch] = useState<SortSearch>(SortSearch.ASCENDED);
   const pickUpDate = useSelector((state: RootState) => state.pickUpDate);
   const returnDate = useSelector((state: RootState) => state.returnDate);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
     const fetchCarList = async () => {
@@ -150,6 +152,25 @@ export const CarsScreen: React.FC = () => {
 
   return (
     <section className="mb-10 grid w-full place-items-center">
+      {isFilterOpen && (
+        <FilterModal onClose={() => setIsFilterOpen(false)}>
+          <FilterItem
+            title={fuelFilters.title}
+            values={fuelFilters.values}
+            onChange={handleFilterSearch}
+          />
+          <FilterItem
+            title={transmissionFilters.title}
+            values={transmissionFilters.values}
+            onChange={handleFilterSearch}
+          />
+          <FilterItem
+            title={categoryFilters.title}
+            values={categoryFilters.values}
+            onChange={handleFilterSearch}
+          />
+        </FilterModal>
+      )}
       <div className="w-full lg:mt-2">
         <EditTab />
       </div>
@@ -192,7 +213,10 @@ export const CarsScreen: React.FC = () => {
                     Ordine descrescătoare
                   </button>
                 </div>
-                <button>
+                <button
+                  onClick={() => setIsFilterOpen(true)}
+                  className="lg:hidden"
+                >
                   <img src={filterIcon} alt="" />
                 </button>
               </div>

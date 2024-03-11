@@ -32,19 +32,19 @@ export const FilterItem: React.FC<FilterItemProps> = ({
   };
 
   return (
-    <div>
-      <h3 className="text-lg font-bold">{title}</h3>
+    <div className="flex flex-col gap-2 font-oswald">
+      <h3 className="text-lg font-bold">{title.toUpperCase()}</h3>
       {filters.map((value) => {
         return (
           <div key={value.label} className="flex items-center gap-1">
             <input
               type="checkbox"
               name={value.value}
-              className="w-[15px] h-[15px]"
+              className="w-[18px] h-[18px]"
               checked={value.isChecked}
               onChange={handleOnChange}
             />
-            <span className="">{value.label}</span>
+            <span className="ml-1">{value.label}</span>
           </div>
         );
       })}
