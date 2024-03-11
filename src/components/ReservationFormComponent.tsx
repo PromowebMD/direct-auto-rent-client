@@ -32,6 +32,7 @@ export const ReservationFormComponent: React.FC<ReservationFormComponentProps> =
   const reservationOptions = useSelector(
     (state: RootState) => state.reservationOptions,
   );
+  const [countryCode, setCountryCode] = useState("+373")
 
   const {
     register,
@@ -59,6 +60,7 @@ export const ReservationFormComponent: React.FC<ReservationFormComponentProps> =
   const onSubmit: SubmitHandler<ReservationForm> = async (data) => {
     setIsLoading(true);
     data.licence = licenceFile;
+    data.phone = countryCode + data.phone;
     const reservation = mapReservationFormToIReservation(data, {
       carId: car.id,
       pickUpDate: pickUpDate ?? "",
@@ -143,15 +145,26 @@ export const ReservationFormComponent: React.FC<ReservationFormComponentProps> =
                 {"Numărul de cifre > 9"}
               </span>
             )}
-            <PhoneInput
-              id="phone-input"
-              international
-              defaultCountry="MD"
-              placeholder="Telefon"
-              className="form-input"
-              {...register("phone")}
-              onChange={() => {}}
-            />
+            <div className="flex">
+              <PhoneInput
+                id="country"
+                international
+                defaultCountry="MD"
+                className="phone-input"
+                onChange={(value) => {
+                  if (value) {
+                    setCountryCode(value.toString());
+                  }
+                }}
+              />
+              <input
+                id="phone"
+                type="number"
+                placeholder="Telefon"
+                className="form-input"
+                {...register("phone")}
+              />
+            </div>
           </div>
           <div className="grid">
             {errors.flightNumber && (
