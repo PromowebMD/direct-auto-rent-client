@@ -175,8 +175,8 @@ export const CarsScreen: React.FC = () => {
         <EditTab />
       </div>
       <div className="w-full px-6 lg:px-0">
-        <div className="mt-4 flex gap-12">
-          <div className="hidden flex-shrink-0 flex-col gap-4 font-oswald lg:flex">
+        <div className="mt-4 flex gap-6 w-full">
+          <div className="hidden flex-shrink-0 flex-col gap-4 font-oswald lg:flex border h-fit p-4 rounded border-gray-300">
             <FilterItem
               title={fuelFilters.title}
               values={fuelFilters.values}
