@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../state/store.ts";
 import { FilterItem } from "../components/FilterItem.tsx";
 import { CarCard } from "../components/CarCard.tsx";
+import filterIcon from "../assets/cars/filter_icon.svg";
 
 const fuelFilters = {
   title: "Tipul combustibilului",
@@ -172,22 +173,27 @@ export const CarsScreen: React.FC = () => {
             />
           </div>
           <div className="flex w-full flex-col">
-            <div className="hidden items-center gap-2 font-oswald lg:flex">
+            <div className="flex flex-col justify-start lg:items-center gap-2 font-oswald lg:flex-row">
               <span className="flex-shrink-0 text-lg font-bold">
-                Sortați după
+                SORTAȚI PREȚUL
               </span>
-              <div className="flex h-fit w-full list-none flex-wrap items-center justify-center gap-2 rounded-full py-1 text-center bg-lightGray">
-                <button
-                  className={`w-full rounded-full px-2 max-w-[200px] hover:bg-gray-100 ${sortSearch === SortSearch.ASCENDED && "bg-white"}`}
-                  onClick={() => handleSortSearch(SortSearch.ASCENDED)}
-                >
-                  Preț în ordine crescătoare
-                </button>
-                <button
-                  className={`w-full rounded-full px-2 max-w-[200px] hover:bg-gray-100 ${sortSearch === SortSearch.DESCENDENT && "bg-white"}`}
-                  onClick={() => handleSortSearch(SortSearch.DESCENDENT)}
-                >
-                  Preț în ordine descrescătoare
+              <div className="flex w-full gap-4 items-center">
+                <div className="flex h-fit w-full list-none flex-wrap items-center justify-center gap-2 rounded-full py-1 text-center bg-lightGray">
+                  <button
+                    className={`w-fit lg:w-full rounded-full px-2 max-w-[200px] hover:bg-gray-100 ${sortSearch === SortSearch.ASCENDED && "bg-white"}`}
+                    onClick={() => handleSortSearch(SortSearch.ASCENDED)}
+                  >
+                    Ordine crescătoare
+                  </button>
+                  <button
+                    className={`w-fit lg:w-full rounded-full px-2 max-w-[200px] hover:bg-gray-100 ${sortSearch === SortSearch.DESCENDENT && "bg-white"}`}
+                    onClick={() => handleSortSearch(SortSearch.DESCENDENT)}
+                  >
+                    Ordine descrescătoare
+                  </button>
+                </div>
+                <button>
+                  <img src={filterIcon} alt="" />
                 </button>
               </div>
             </div>

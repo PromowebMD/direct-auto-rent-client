@@ -43,7 +43,7 @@ export const FooterInfo: React.FC = () => {
                 <div className="flex flex-col gap-4 lg:items-center">
                   <div className="flex flex-col gap-2 text-base font-semibold text-white font-oswald">
                     {linkList.map((item) => {
-                      return <Link to={item.link}>{item.title}</Link>;
+                      return <Link key={item.link} to={item.link}>{item.title}</Link>;
                     })}
                   </div>
                 </div>
