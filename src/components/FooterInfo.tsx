@@ -4,7 +4,6 @@ import {
   FOOTER_INFO_TEXT_1,
   FOOTER_INFO_TEXT_2,
 } from "../utils/appText.ts";
-import companyLogo from "../assets/footer/company_logo.svg";
 import logoIcon from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 
@@ -106,16 +105,13 @@ export const FooterInfo: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full flex-col items-center justify-center gap-4 py-5 lg:w-2/3 lg:flex-row lg:justify-between lg:self-center">
-        <p className="text-sm text-gray-400">
+      <div className="flex w-full items-center justify-center gap-4 py-5 px-4 lg:self-center">
+        <p className="text-center text-sm text-gray-400 font-roboto">
           {COPY_RIGHTS}
           <a href="https://promoweb.md/" className="ml-1 underline">
             Promoweb.md
           </a>
         </p>
-        <a href="https://promoweb.md/">
-          <img src={companyLogo} alt="" className="max-w-[117px]" />
-        </a>
       </div>
     </div>
   );
